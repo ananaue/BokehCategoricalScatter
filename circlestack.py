@@ -8,14 +8,14 @@ def circlestack(plot, renderer):
     if (not isinstance(renderer, GlyphRenderer)
             or not isinstance(renderer.glyph, Circle)):
         raise TypeError('renderer must be Circle GlyphRenderer')
-    if renderer.glyph.radius is not None:
-        raise TypeError('Circle glyph must not have radius property')
+    # if renderer.glyph.radius is not None:
+    #     raise TypeError('Circle glyph must not have radius property')
 
     # get renderer data source
     source = renderer.data_source
 
     # get Circle glyph size (diameter in pixels)
-    size = renderer.glyph.size
+    size = 2 * renderer.glyph.radius
 
     # check and identify ranges and fields
     if (isinstance(plot.x_range, FactorRange) and
@@ -115,6 +115,5 @@ def circlestack(plot, renderer):
 
     # repack fr_data
     fr_data = list(zip(levels, offsets))
-
     # set data
     source.data[fr_field] = fr_data
