@@ -1,4 +1,4 @@
-# Categorical Scatter Plot in Bokeh
+# Categorical Scatter Plots in Bokeh
 
 - Make categorical scatter plots in Python using Bokeh
 - Currently supports:
@@ -21,7 +21,7 @@
 
 These are also detailed in config_and_info.txt
 
-- Data:
+- Data
   - Text files (.txt) containing tab-delimited values, with a first line of headings.
   - Column headings will determine x axis labels. The text file's name can be used to add a title if add_title = yes in the config.
   - In Windows, making the file can be done by copying a selection in Excel, and pasting into an empty text file.
@@ -38,7 +38,7 @@ These are also detailed in config_and_info.txt
   - Enter 'pip install bokeh' and allow it to complete installation.
   - Then, enter 'pip install scipy'
 
-- Selenium and driver
+- Selenium and browser driver
   - These steps are only necessary if you want to export PNG or SVG files in addition to HTML.
   - The installation steps are described in the [Bokeh docs](https://docs.bokeh.org/en/latest/docs/user_guide/output/export.html), but, in short, they are:
     1. If not using Conda, install Selenium in a similar manner to Bokeh/Scipy ('pip install selenium').
