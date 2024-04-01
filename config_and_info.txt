@@ -1,0 +1,69 @@
+[Config]
+
+; categoricalscatter.py will make a plot out of text files containing tab-delimited data,
+;   where the first line is headings. On Windows at least, you can just copy a selection of
+;   cells and paste into your text file, and it will paste as tab-deliminited.
+
+; categoricalscatter.py requires Python to be installed. I used the latest version, recent ones may work.
+; During installation, choose to associate files with Python when prompted for simplicity.
+
+; Next, you need to install Bokeh and scipy. 
+; Windows: if you did not choose to add Python to environment variables, then go to the folder:
+; C:\Users\[USERNAME]\AppData\Local\Programs\Python\Python312\Scripts\
+; Then, run a Command Prompt (or PowerShell) window in that folder, by typing 'cmd' into
+;   the address bar and pressing enter.
+; Mac/Linux: find the ...python/scripts folder, and open a terminal in it
+; In the terminal or Command Prompt, run the command 'pip install bokeh'
+; When that is complete, run 'pip install scipy' in the same terminal.
+
+; To run categoricalscatter.py, first download this folder somewhere if you have not
+; Then, drag the data text file onto dragdrop.py.
+; Unfortunately, that may not work outside of Windows.
+; In case dragging does not work, input the file name here, and run nodragdrop.py
+
+data_file = YourDataFilesName.txt
+
+; If you want to automatically make a png and svg, first install what is described in https://docs.bokeh.org/en/latest/docs/user_guide/output/export.html
+; This is a more difficult requirement. This is not required for just making an html file.
+; If doing the Firefox route (and if Windows), (somewhat similar for Chrome), put the bokehdriver
+;   in a folder by itself. Then, put a symlink to firefox.exe in that folder too.
+; Add that folder's path to User variables: Path in environment variables. 
+; Chrome/MacOS steps may be similar, but I am not sure.
+; Then, run dragdrop_svgpng.py or nodrag_drop_svgpng.py
+
+; - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+; After changing config values, save this file
+
+line_width = 4.5
+
+; Currently it scales up/down the number given here if you have a different number of data categories.
+width_with_four_categories = 1900
+
+; If title is added, total height will be height_of_frame times 1.0710. In log scale, values far from 
+;   than 1275 may not work well.
+height_of_frame = 1275
+
+; The available fonts depends on the browser that opens the html file. 'times' for Times New Roman may work.
+text_font = helvetica
+
+; If addtitle is set to 'yes', then the title of the the text file is used to add a title
+add_title = yes
+
+title_font_size = 75
+
+x_axis_tick_labels_font_size = 65
+
+; can be 'log' or 'linear'
+y_axis_scale = linear
+
+y_axis_label = Numbers
+
+y_axis_label_font_size = 65
+
+y_axis_tick_labels_font_size = 54
+
+; Columns to add significance bar between. Currently, only one set/bar is supported. P val (for number of asterisks)
+;   is calculated by script.If p < 0.05, no bar is added
+; Enter a value like '1,3' with no spaces or apostrophes.
+; If you do not want significance bars, enter 'no'.
+columns_for_t_test = 2,4
